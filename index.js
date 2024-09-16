@@ -55,7 +55,7 @@ function getVaultDataHash(params, owner) {
 
     // Create the keccak256 hash using solidityPackedKeccak256 equivalent in ethers.js
     return solidityPackedKeccak256(
-        ['string', 'string', 'uint256', 'address', 'address'],
+        ['string', 'string', 'string', 'address', 'address'],
         [name, appId, chainId, vaultAddress, owner]
     );
 }
@@ -64,7 +64,7 @@ async function test() {
     const params = {
         name: "Vault Name",
         vaultAddress: "0x10f3d572b830f9a5f7f65997da3c438c9a5b9f48",
-        chainId: 11155111,
+        chainId: '11155111',
         appId: "c82425a7-8211-4aff-b418-967d085f1dae"
     };
     const owner = "0x734136Cb869f349aF65561Ab0B8B12396851E6e0";
